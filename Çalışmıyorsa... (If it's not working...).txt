@@ -1,0 +1,2 @@
+O zaman bilgisayarınıza Ruby yüklemeniz gerekebilir.
+[Then you may need to download Ruby into your pc.]

@@ -1,0 +1,52 @@
+print"-Made by tunaeymen027-"
+
+print"
+@@@@@@@   @@@  @@@   @@@@@@   @@@  @@@  @@@@@@@   @@@@@@   @@@@@@@@@@    @@@@@@    @@@@@@@   @@@@@@   @@@  @@@  
+@@@@@@@@  @@@  @@@  @@@@@@@@  @@@@ @@@  @@@@@@@  @@@@@@@@  @@@@@@@@@@@  @@@@@@@   @@@@@@@@  @@@@@@@@  @@@@ @@@  
+@@!  @@@  @@!  @@@  @@!  @@@  @@!@!@@@    @@!    @@!  @@@  @@! @@! @@!  !@@       !@@       @@!  @@@  @@!@!@@@  
+!@!  @!@  !@!  @!@  !@!  @!@  !@!!@!@!    !@!    !@!  @!@  !@! !@! !@!  !@!       !@!       !@!  @!@  !@!!@!@!  
+@!@@!@!   @!@!@!@!  @!@!@!@!  @!@ !!@!    @!!    @!@  !@!  @!! !!@ @!@  !!@@!!    !@!       @!@!@!@!  @!@ !!@!  
+!!@!!!    !!!@!!!!  !!!@!!!!  !@!  !!!    !!!    !@!  !!!  !@!   ! !@!   !!@!!!   !!!       !!!@!!!!  !@!  !!!  
+!!:       !!:  !!!  !!:  !!!  !!:  !!!    !!:    !!:  !!!  !!:     !!:       !:!  :!!       !!:  !!!  !!:  !!!  
+:!:       :!:  !:!  :!:  !:!  :!:  !:!    :!:    :!:  !:!  :!:     :!:      !:!   :!:       :!:  !:!  :!:  !:!  
+ ::       ::   :::  ::   :::   ::   ::     ::    ::::: ::  :::     ::   :::: ::    ::: :::  ::   :::   ::   ::  
+ :         :   : :   :   : :  ::    :      :      : :  :    :      :    :: : :     :: :: :   :   : :  ::    :   
+"
+
+require 'socket'
+
+def port_open?(ip, port, timeout = 1)
+  begin
+    Socket.tcp(ip, port, connect_timeout: timeout)
+    true
+  rescue Errno::ECONNREFUSED, Errno::EHOSTUNREACH, Errno::ETIMEDOUT
+    false
+  end
+end
+
+def scan_ports(ip, port_range)
+  puts "Scanning #{ip}..."
+  port_range.each do |port|
+    if port_open?(ip, port)
+      puts "Port #{port} is open."
+    else
+      puts "Port #{port} is closed."
+    end
+  end
+  puts "Scan complete."
+end
+
+print "Enter the IP address to scan: "
+ip = gets.chomp
+
+print "Enter starting port: "
+start_port = gets.chomp.to_i
+
+print "Enter ending port: "
+end_port = gets.chomp.to_i
+
+if start_port > 0 && end_port >= start_port
+  scan_ports(ip, (start_port..end_port))
+else
+  puts "Invalid port range. Please enter valid starting and ending ports."
+end

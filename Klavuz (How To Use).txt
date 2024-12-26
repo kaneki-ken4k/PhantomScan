@@ -1,0 +1,21 @@
+Powershell'i açın.
+ruby yazın.
+phantomscan.arb dosyasını alın, masaüstüne atın.
+phantomscan.arb dosyasını sürükleyip bırakın.
+"ruby C:\Users\sizinkullanıcıadınız\Desktop\phantomscan.arb" yazısı şeklinde olacak
+Enter'a basın.
+Keyfini çıkarın.
+Bu program kullanılarak yaptığınız herhangi bir şeyden ben (yapımcı) sorumlu değilim.
+İsterseniz phantomscan.arb dosyasını masaüstüne atmayın sadece powershell'de "ruby" yazdıktan sonra yanına sürükleyip bıraksanız yeter.
+Ben nosystemistsafe. iyi kullanımlar dilerim.
+
+Open Powershell.
+Type ruby.
+Take the phantomscan.arb file and put it on the desktop.
+Drag and drop the phantomscan.arb file.
+It will be as "ruby C:\Users\yourusername\Desktop\phantomscan.arb"
+Press Enter.
+Enjoy.
+I (the producer) am not responsible for anything you do using this program.
+If you want, do not put the phantomscan.arb file on the desktop, just type "ruby" in Powershell and drag and drop it next to it.
+I am nosystemistsafe. I wish you a good use.
